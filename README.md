@@ -1,17 +1,29 @@
 # Rethinking Model Prototyping through the MedMNIST+ Dataset Collection
 
 ## Overview 🧠
-
-## Key Features 🔑
-- 
-
-## Results 📊
-
-## Getting Started 🚀
 TODO
 
+## Key Features 🔑
+TODO
+
+## Results 📊
+TODO
+
+## Getting Started 🚀
+### Project Structure
+- `config.yaml`
+- `environment.yaml`
+- `evaluate.py`
+- `feature_extraction.py`
+- `main.py`
+- `train.py`
+- `utils.py`
+
+### Installation and Requirements
+### Quick Start
+
 ## Acknowledgements 👏
-- 
+TODO
 
 # Citation 📖
 If you find this work useful in your research, please consider citing our paper:
