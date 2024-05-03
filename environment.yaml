@@ -1,0 +1,13 @@
+# xAILab
+# Chair of Explainable Machine Learning
+# Otto-Friedrich University of Bamberg
+#
+# @description:
+# Contains all the required packages for the project.
+
+dependencies:
+  - python=3.11
+  - pytorch
+  - timm
+  - sklearn
+  - medmnist
