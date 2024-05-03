@@ -28,7 +28,7 @@ TODO
 # Citation 📖
 If you find this work useful in your research, please consider citing our paper:
 - [Publication](...)
-- [Preprint]([https://arxiv.org/abs/2402.12500](https://arxiv.org/abs/2404.15786))
+- [Preprint](https://arxiv.org/abs/2404.15786)
 
 ```
 @article{doerrich2024rethinking,
