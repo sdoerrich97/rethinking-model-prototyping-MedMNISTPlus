@@ -43,7 +43,7 @@ Figure 3: Analysis of model performance (ACC) improvement with increasing input 
 
 ### 4. Competitiveness of CNNs compared to ViTs
 
-![box_dpi300](https://github.com/sdoerrich97/rethinking-model-prototyping-MedMNISTPlus/assets/98497332/b85c7442-e713-4455-83ce-ecd83a24eae4)
+![box_dpi300](https://github.com/sdoerrich97/rethinking-model-prototyping-MedMNISTPlus/assets/98497332/9a58cbec-4a2b-4a0c-b04b-e51958501911)
 
 Figure 4: Illustrating the accuracy (ACC) distributions exhibited by each model averaged across all 12 datasets, delineated by training scheme (subplots) and input resolution (color coded) (left). Percentile statistics for each model performance in terms of averaged accuracy (ACC)
 across all training schemes and input resolutions across all 12 datasets (right).
