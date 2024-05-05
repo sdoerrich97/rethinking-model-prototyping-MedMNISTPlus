@@ -51,7 +51,7 @@ across all training schemes and input resolutions across all 12 datasets (right)
 ## Getting Started 🚀
 ### Project Structure
 - [`config.yaml`](https://github.com/sdoerrich97/rethinking-model-prototyping-MedMNISTPlus/blob/main/config.yaml): Training and evaluation configuration
-- [`environment.yaml`](https://github.com/sdoerrich97/rethinking-model-prototyping-MedMNISTPlus/blob/main/environment.yaml): Requirements
+- [`environment.yaml`](https://github.com/sdoerrich97/rethinking-model-prototyping-MedMNISTPlus/blob/main/environment.yaml): Package Requirements
 - [`evaluate.py`](https://github.com/sdoerrich97/rethinking-model-prototyping-MedMNISTPlus/blob/main/evaluate.py): Evaluation script
 - [`feature_extraction.py`](https://github.com/sdoerrich97/rethinking-model-prototyping-MedMNISTPlus/blob/main/feature_extraction.py): Feature embedding extractor
 - [`main.py`](https://github.com/sdoerrich97/rethinking-model-prototyping-MedMNISTPlus/blob/main/main.py): Main script
@@ -59,11 +59,100 @@ across all training schemes and input resolutions across all 12 datasets (right)
 - [`utils.py`](https://github.com/sdoerrich97/rethinking-model-prototyping-MedMNISTPlus/blob/main/utils.py): Helper functions
 
 ### Installation and Requirements
+#### Clone this Repository:
+To clone this repository to your local machine, use the following command:
+```
+git clone https://github.com/sdoerrich97/rethinking-model-prototyping-MedMNISTPlus.git
+```
+
+#### Set up a Python Environment Using Conda (Recommended) 
+If you don't have Conda installed, you can download and install it from [here](https://conda.io/projects/conda/en/latest/index.html).
+Once Conda is installed, create a Conda environment with Python 3 (>= 3.11) in your terminal:
+```
+conda create --name rethinkingPrototyping python=3.11
+```
+Of course, you can use a standard Python distribution as well.
+
+#### Install Required Packages From the Terminal Using Conda (Recommended)
+All required packages are listed in [`environment.yaml`](https://github.com/sdoerrich97/rethinking-model-prototyping-MedMNISTPlus/blob/main/environment.yaml).
+
+Activate your Conda environment in your terminal:
+```
+conda activate rethinkingPrototyping
+```
+
+Once Conda is activated, install PyTorch depending on your system's configuration. For example for Linux using Conda and CUDA 12.1 use the following command. For all other configurations refer to the official [PyTorch documentation](https://pytorch.org/):
+```
+conda install pytorch torchvision torchaudio pytorch-cuda=12.1 -c pytorch -c nvidia
+```
+
+Install required Python packages via Conda:
+```
+conda install fastai::timm
+conda install anaconda::scikit-learn
+```
+
+Additionally, navigate to your newly created Conda environment within your Conda install and install the remaining Python Packages from [PyPI](https://pypi.org/):
+```
+cd ../miniconda3/envs/rethinkingPrototyping/Scripts
+pip install medmnist
+```
+
+If you use a standard Python distribution instead, you need to adjust the installation steps accordingly.
+
 ### Quick Start
+Once all requirements are installed, make sure the Conda environment is active and navigate to the project directory:
+```
+cd ../rethinking-model-prototyping-MedMNISTPlus
+```
+
+You can adjust the parameters and hyperparameters of each training/evaluation run within your copy of [`config.yaml`](https://github.com/sdoerrich97/rethinking-model-prototyping-MedMNISTPlus/blob/main/config.yaml). These are
+```
+# Fixed Parameters
+data_path: # Where the dataset is stored (' ')
+output_path: # Where the trained model shall be stored. (' ')
+epochs: # How many epochs to train for. (100)
+learning_rate: # Learning rate (0.0001)
+batch_size: # Batch size for the training. (64)
+batch_size_eval: # Batch size for the evaluation. (256)
+device: # Which device to run the computations on. ('cuda:0')
+
+# Modifiable Parameters
+dataset: # Which dataset to use. ('bloodmnist', 'breastmnist', 'chestmnist', 'dermamnist', 'octmnist', 'organamnist', 'organcmnist', 'organsmnist', 'pathmnist', 'pneumoniamnist', 'retinamnist', 'tissuemnist')
+img_size: # Height and width of the input image. (28, 64, 128, 224)
+training_procedure: # Which training procedure to use. ('endToEnd', 'linearProbing', 'kNN')
+architecture: # Which model to use. ('vgg16', 'alexnet', 'resnet18', 'densenet121', 'efficientnet_b4', 'vit_base_patch16_224', 'vit_base_patch16_clip_224', 'eva02_base_patch16_clip_224', 'vit_base_patch16_224.dino', 'samvit_base_patch16')
+k: # Number of neighbors for the kNN.
+seed: # Seed for random operations for reproducibility. (9930641, 115149041, 252139603)
+```
+
+Once the config file is all set, you can run a combined training and evaluation run using:
+```
+python main.py --config_file './config.yaml'
+```
+
+Additionally, you can adjust the _#Modifiable Parameters_ (not the  _#Fixed Parameters_!) on the fly, using for example:
+```
+python main.py --config_file './config.yaml' --dataset 'bloodmnist' --img_size 224 --training_procedure 'endToEnd' --architecture 'vgg16' --seed 9930641
+```
+
+If you only want to run either training or evaluation, you can run the respective scripts independently:
+```
+python train.py --config_file './config.yaml'
+python evaluate.py --config_file './config.yaml'
+```
+
+Lastly, you can use [`feature_extraction.py`](https://github.com/sdoerrich97/rethinking-model-prototyping-MedMNISTPlus/blob/main/feature_extraction.py) to extract the latent embeddings of all used models before the classification head:
+```
+python feature_extraction.py --data_path '<DATAPATH>' --output_path '<OUTPUTPATH>'
+```
+Please replace `<DATAPATH>` and `<OUTPUTPATH>` with the respective paths to your files.
+
+You will find all parameters (model architectures, number of epochs, learning rate, etc.) we used for our benchmark within the provided [`config.yaml`](https://github.com/sdoerrich97/rethinking-model-prototyping-MedMNISTPlus/blob/main/config.yaml) in case you want to reproduce our results. If you want to use our evaluation framework for your own models and datasets, you only need to adjust the config-file, respectively.
 
 # Citation 📖
 If you find this work useful in your research, please consider citing our paper:
-- [Publication](...)
+- Publication: TBD
 - [Preprint](https://arxiv.org/abs/2404.15786)
 
 ```
