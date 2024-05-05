@@ -17,14 +17,14 @@ Subsequent sections outline the paper's [key contributions](#key-contributions-)
 ## Results 📊
 First and foremost, the paper presents the very first solid baseline evaluation for the MedMNIST+ dataset collection. Furthermore, the findings suggest that computationally efficient training schemes and modern foundation models hold promise in bridging the gap between expensive end-to-end training and more resource-refined approaches. Contrary to prevailing assumptions, the authors observe that higher resolutions may not consistently improve performance beyond a certain threshold, advocating for the use of lower resolutions, particularly in prototyping stages, to expedite processing. Additionally, the analysis reaffirms the competitiveness of convolutional models compared to Vision Transformer (ViT)-based architectures, emphasizing the importance of understanding the intrinsic capabilities of different model architectures.
 
-### 1. MedMNIST+ Baseline
+### MedMNIST+ Baseline
 
 ![github_benchmark_300dpi](https://github.com/sdoerrich97/rethinking-model-prototyping-MedMNISTPlus/assets/98497332/0b18ce89-f095-4187-8842-893255f47808)
 
 Figure 1: Side-by-side comparison of the 12 2D datasets included in MedMNIST+, showcasing diverse primary data modalities and classification tasks across four image resolutions (left). Benchmark outcomes summarizing the average mean and standard deviation of accuracy
 (ACC) and area under the receiver operating characteristic curve (AUC) across all datasets for all training scheme-model-image resolution combinations, derived from three independent random seeds (right).
 
-### 2. Potential of Computationally Efficient Training Schemes
+### Potential of Computationally Efficient Training Schemes
 
 <p align="middle">
   <img src="https://github.com/sdoerrich97/rethinking-model-prototyping-MedMNISTPlus/assets/98497332/2286c7d1-77c6-4767-8217-52d3656af536" width="750" />
@@ -33,7 +33,7 @@ Figure 1: Side-by-side comparison of the 12 2D datasets included in MedMNIST+, s
 Figure 2: Ranking analysis showcasing the frequency of model placements among the top-5 performers in terms of accuracy (ACC) across all training schemes and resolutions (top), for each training scheme separately (center), and for both training schemes and resolutions, respectively (bottom) across all
 datasets.
 
-### 3. Performance Improvement Cap of Higher Resolutions
+### Performance Improvement Cap of Higher Resolutions
 
 <p align="middle">
   <img src="https://github.com/sdoerrich97/rethinking-model-prototyping-MedMNISTPlus/assets/98497332/859d9e66-a786-44af-9ebf-aab096be12e8" width="750" />
@@ -41,7 +41,7 @@ datasets.
 
 Figure 3: Analysis of model performance (ACC) improvement with increasing input resolution across all $12$ datasets. The figure illustrates the frequency of performance enhancements as input resolutions progress from $28 \times 28$ to $64 \times 64$, $64 \times 64$ to $128 \times 128$, and $128 \times 128$ to $224 \times 224$, encompassing all models and training schemes. Each bar signifies for how many datasets the model performance, in terms of the mean accuracy across the three random seeds, is superior at the next higher resolution compared to the preceding lower one, with a maximum of 12 improvements per transition.
 
-### 4. Competitiveness of CNNs compared to ViTs
+### Competitiveness of CNNs compared to ViTs
 
 ![box_dpi300](https://github.com/sdoerrich97/rethinking-model-prototyping-MedMNISTPlus/assets/98497332/9a58cbec-4a2b-4a0c-b04b-e51958501911)
 
