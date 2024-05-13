@@ -45,8 +45,15 @@ Figure 3: Analysis of model performance (ACC) improvement with increasing input 
 
 ![box_dpi300](https://github.com/sdoerrich97/rethinking-model-prototyping-MedMNISTPlus/assets/98497332/9a58cbec-4a2b-4a0c-b04b-e51958501911)
 
-Figure 4: Illustrating the accuracy (ACC) distributions exhibited by each model averaged across all 12 datasets, delineated by training scheme (subplots) and input resolution (color coded) (left). Percentile statistics for each model performance in terms of averaged accuracy (ACC)
-across all training schemes and input resolutions across all 12 datasets (right).
+Figure 4: Illustrating the accuracy (ACC) distributions exhibited by each model averaged across all 12 datasets, delineated by training scheme (subplots) and input resolution (color coded) (left). Percentile statistics for each model performance in terms of averaged accuracy (ACC) across all training schemes and input resolutions across all 12 datasets (right).
+
+### Significant Pair-Wise Model Performance Differences
+
+<p align="middle">
+  <img src="https://github.com/sdoerrich97/rethinking-model-prototyping-MedMNISTPlus/assets/98497332/e6aae3b9-1d30-4dfc-90b3-65d77cf74574" width="650" />
+</p>
+
+Figure 5: llustration of pair-wise significant differences between model performance in terms of averaged accuracy across all training schemes, input resolutions, and all 12 datasets using the results of the pair-wise Wilcoxon signed-rank tests with a Bonferroni correction (adjusted significance level of p < 0.0011). (_Green Diamond_: significant difference favoring the model in the row, _Green Trophy_ : significant difference favoring the model in the column, _Red Cross_ : no significant difference).
 
 ## Getting Started 🚀
 ### Project Structure
