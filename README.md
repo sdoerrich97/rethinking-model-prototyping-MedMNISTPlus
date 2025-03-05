@@ -162,7 +162,7 @@ You will find all parameters (model architectures, number of epochs, learning ra
 
 # Citation 📖
 If you find this work useful in your research, please consider citing our paper:
-- Publication: TBD
+- [Publication](https://www.nature.com/articles/s41598-025-92156-9)
 - [Preprint](https://arxiv.org/abs/2404.15786)
 
 ```
