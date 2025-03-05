@@ -1,17 +1,20 @@
-# Rethinking Model Prototyping through the MedMNIST+ Dataset Collection
-This repository contains the official codebase for the paper titled "Rethinking Model Prototyping through the MedMNIST+ Dataset Collection".
+# Rethinking model prototyping through the MedMNIST+ dataset collection
+<p align="center">
+    [<a href="https://arxiv.org/abs/2404.15786">Preprint</a>]
+    [<a href="https://www.nature.com/articles/s41598-025-92156-9">Publication</a>]
+    [<a href="#citation-">Citation</a>]
+</p>
 
 ## Overview 🧠
-Deep learning (DL) has witnessed remarkable advancements across diverse domains, including image classification and natural language processing. These strides have been driven by the development of sophisticated models and advanced training methodologies, such as self-supervised contrastive methods, which offer cost-effective labeling strategies. Despite the considerable progress and DL models achieving performance levels comparable to experts in medical tasks, their integration into daily clinical practice has been comparatively slow.  One major obstacle hindering this adoption is the scarcity of appropriate datasets in medical imaging, characterized by limited sample sizes and heterogeneous image acquisition conditions. Additionally, there's a concerning trend in DL research prioritizing incremental performance improvements on influential benchmarks over addressing clinically relevant needs. This trend, partially fueled by academic incentives favoring quantity over relevance, leads to increased computational requirements without necessarily improving real-world applicability. The limitations of scaling alone, evidenced by larger models experiencing challenges in trustworthiness or task-specific performance, further impede DL's utility in clinical environments.
-
-Hence, the paper underscores the necessity for qualitative enhancements alongside quantitative scaling in DL research, particularly within real-world medical contexts. It advocates for the creation of larger and more diverse datasets and benchmarks, incorporating additional inductive biases and fostering the development of more sophisticated approaches. In this context, the paper introduces a comprehensive benchmark for the [MedMNIST+ database](https://zenodo.org/records/10519652) to re-evaluate traditional convolutional neural networks (CNNs), Transformer-based architectures as well as training schemes for medical image classification. The evaluation highlights the potential of computationally efficient training schemes while reaffirming the competitiveness of convolutional models compared to Vision Transformer-based architectures. Furthermore, the standardized evaluation framework aims to enhance transparency, reproducibility, and comparability in medical image classification research.
+The integration of deep learning based systems in clinical practice is often impeded by challenges rooted in limited and heterogeneous medical datasets. In addition, the field has increasingly prioritized marginal performance gains on a few, narrowly scoped benchmarks over clinical applicability, slowing down meaningful algorithmic progress. This trend often results in excessive fine-tuning of existing methods on selected datasets rather than fostering clinically relevant innovations. In response, this work introduces a comprehensive benchmark for the [MedMNIST+ dataset collection](https://zenodo.org/records/10519652), designed to diversify the evaluation landscape across several imaging modalities, anatomical regions, classification tasks and sample sizes. We systematically reassess commonly used Convolutional Neural Networks (CNNs) and Vision Transformer (ViT) architectures across distinct medical datasets, training methodologies, and input resolutions to validate and refine existing assumptions about model effectiveness and development. Our findings suggest that computationally efficient training schemes and modern foundation models offer viable alternatives to costly end-to-end training. Additionally, we observe that higher image resolutions do not consistently improve performance beyond a certain threshold. This highlights the potential benefits of using lower resolutions, particularly in prototyping stages, to reduce computational demands without sacrificing accuracy. Notably, our analysis reaffirms the competitiveness of CNNs compared to ViTs, emphasizing the importance of comprehending the intrinsic capabilities of different architectures. Finally, by establishing a standardized evaluation framework, we aim to enhance transparency, reproducibility, and comparability within the MedMNIST+ dataset collection as well as future research.
 
 Subsequent sections outline the paper's [key contributions](#key-contributions-), showcase the [obtained results](#results-), and offer instructions on [accessing and utilizing the accompanying codebase](#getting-started-) to replicate the findings and train or evaluate your own models.
 
 ## Key Contributions 🔑
-- Presentation of a solid baseline performance for MedMNIST+ and a standardized evaluation framework for assessing future model performance in medical image classification.
+- Systematic benchmarking of a wide range of commonly used models across diverse medical datasets, accounting for variations in resolutions, tasks, sample sizes, and class distributions.
 - Identification of systematic strengths and weaknesses inherent in traditional models within the context of medical image classification.
 - Reevaluation of prevalent assumptions with respect to model design, training schemes and input resolution requirements.
+- Presentation of a solid baseline performance for MedMNIST+ and a standardized evaluation framework for assessing future model performance in medical image classification.
 - Formulation of recommendations and take-aways for model development and deployment.
 
 ## Results 📊
@@ -163,12 +166,21 @@ If you find this work useful in your research, please consider citing our paper:
 - [Preprint](https://arxiv.org/abs/2404.15786)
 
 ```
-@article{doerrich2024rethinking,
-      title="Rethinking Model Prototyping through the MedMNIST+ Dataset Collection", 
-      author="Sebastian Doerrich and Francesco Di Salvo and Julius Brockmann and Christian Ledig",
-      year="2024",
-      eprint="2404.15786",
-      archivePrefix="arXiv",
-      primaryClass="eess.IV"
+@article{doerrich2025rethinking,
+author={Doerrich, Sebastian
+and {Di Salvo}, Francesco
+and Brockmann, Julius
+and Ledig, Christian},
+title={Rethinking model prototyping through the MedMNIST+ dataset collection},
+journal={Scientific Reports},
+year={2025},
+month={Mar},
+day={05},
+volume={15},
+number={1},
+pages={7669},
+issn={2045-2322},
+doi={10.1038/s41598-025-92156-9},
+url={https://doi.org/10.1038/s41598-025-92156-9}
 }
 ```
