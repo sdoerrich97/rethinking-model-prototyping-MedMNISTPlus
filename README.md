@@ -22,7 +22,9 @@ First and foremost, the paper presents the very first solid baseline evaluation 
 
 ### MedMNIST+ Baseline
 
-![github_benchmark_300dpi](https://github.com/sdoerrich97/rethinking-model-prototyping-MedMNISTPlus/assets/98497332/0b18ce89-f095-4187-8842-893255f47808)
+<p align="middle">
+  <img src="assets/benchmark.png" />
+</p>
 
 Figure 1: Side-by-side comparison of the 12 2D datasets included in MedMNIST+, showcasing diverse primary data modalities and classification tasks across four image resolutions (left). Benchmark outcomes summarizing the average mean and standard deviation of accuracy
 (ACC) and area under the receiver operating characteristic curve (AUC) across all datasets for all training scheme-model-image resolution combinations, derived from three independent random seeds (right).
@@ -30,7 +32,7 @@ Figure 1: Side-by-side comparison of the 12 2D datasets included in MedMNIST+, s
 ### Potential of Computationally Efficient Training Schemes
 
 <p align="middle">
-  <img src="https://github.com/sdoerrich97/rethinking-model-prototyping-MedMNISTPlus/assets/98497332/2286c7d1-77c6-4767-8217-52d3656af536" width="750" />
+  <img src="assets/model_ranking.png" />
 </p>
 
 Figure 2: Ranking analysis showcasing the frequency of model placements among the top-5 performers in terms of accuracy (ACC) across all training schemes and resolutions (top), for each training scheme separately (center), and for both training schemes and resolutions, respectively (bottom) across all
@@ -39,21 +41,23 @@ datasets.
 ### Performance Improvement Cap of Higher Resolutions
 
 <p align="middle">
-  <img src="https://github.com/sdoerrich97/rethinking-model-prototyping-MedMNISTPlus/assets/98497332/859d9e66-a786-44af-9ebf-aab096be12e8" width="750" />
+  <img src="assets/improvement_resolutions.png" />
 </p>
 
 Figure 3: Analysis of model performance (ACC) improvement with increasing input resolution across all $12$ datasets. The figure illustrates the frequency of performance enhancements as input resolutions progress from $28 \times 28$ to $64 \times 64$, $64 \times 64$ to $128 \times 128$, and $128 \times 128$ to $224 \times 224$, encompassing all models and training schemes. Each bar signifies for how many datasets the model performance, in terms of the mean accuracy across the three random seeds, is superior at the next higher resolution compared to the preceding lower one, with a maximum of 12 improvements per transition.
 
 ### Competitiveness of CNNs compared to ViTs
 
-![box_dpi300](https://github.com/sdoerrich97/rethinking-model-prototyping-MedMNISTPlus/assets/98497332/9a58cbec-4a2b-4a0c-b04b-e51958501911)
+<p align="middle">
+  <img src="assets/cnns_vs_vits.png" />
+</p>
 
 Figure 4: Illustrating the accuracy (ACC) distributions exhibited by each model averaged across all 12 datasets, delineated by training scheme (subplots) and input resolution (color coded) (left). Percentile statistics for each model performance in terms of averaged accuracy (ACC) across all training schemes and input resolutions across all 12 datasets (right).
 
 ### Significant Pair-Wise Model Performance Differences
 
 <p align="middle">
-  <img src="https://github.com/sdoerrich97/rethinking-model-prototyping-MedMNISTPlus/assets/98497332/e6aae3b9-1d30-4dfc-90b3-65d77cf74574" width="650" />
+  <img src="assets/pairwise_significant_differences.png" />
 </p>
 
 Figure 5: llustration of pair-wise significant differences between model performance in terms of averaged accuracy across all training schemes, input resolutions, and all 12 datasets using the results of the pair-wise Wilcoxon signed-rank tests with a Bonferroni correction (adjusted significance level of p < 0.0011). (_Green Diamond_: significant difference favoring the model in the row, _Green Trophy_ : significant difference favoring the model in the column, _Red Cross_ : no significant difference).
