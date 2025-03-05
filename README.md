@@ -1,4 +1,4 @@
-# Rethinking model prototyping through the MedMNIST+ dataset collection
+# Rethinking model prototyping through the MedMNIST+ dataset collection @ Scientific Reports
 <p align="center">
     [<a href="https://arxiv.org/abs/2404.15786">Preprint</a>]
     [<a href="https://www.nature.com/articles/s41598-025-92156-9">Publication</a>]
